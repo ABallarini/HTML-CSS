@@ -1,0 +1,307 @@
+// set the base colors
+/* add the color palette */
+/* 1B4A23 */
+/* FFC090 */
+/* FFFFFF */
+/* 19912D */
+/* F7F7F7 */
+/* F9F9F9 */
+/* 000000 */
+$color-primary: #1b4a23;
+$color-secondary: #ffc090;
+$color-white: #ffffff;
+$color-green: #19912d;
+$color-light: #f7f7f7;
+$color-lighter: #f9f9f9;
+$color-black: #000000;
+
+// Set a base for the centering using flex
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Set the base for putting a div at the end
+%flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// Set the base for putting a div at the start
+%flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// Set the base for putting a div at the space between
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Set the base for putting a div at the space around
+%flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// Set the width of 100% for the div
+%full-width {
+  width: 100%;
+}
+
+// Set the height of 100% for the div
+%full-height {
+  height: 100%;
+}
+
+// Set the base for the flex column
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Set the base for the flex row
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// set the base for fixed position
+%fixed {
+  position: fixed;
+}
+
+// set the base for absolute position
+%absolute {
+  position: absolute;
+}
+
+// set the base for relative position
+%relative {
+  position: relative;
+}
+
+// set the base for the z-index
+%z-index {
+  z-index: 100;
+}
+
+// set the base for the top
+%top {
+  top:0;
+}
+
+// set the base for the bottom
+%bottom {
+  bottom: 0;
+}
+
+// set the base for the left
+%left {
+  left: 0;
+}
+
+// set the base for the right
+%right {
+  right: 0;
+}
+
+// set a base padding
+%padding {
+  padding: 1rem;
+}
+
+// set a zero margin
+%no-margin {
+  margin: 0;
+}
+
+// set a zero padding
+%no-padding {
+  padding: 0;
+}
+
+// set a base margin
+%margin {
+  margin: 1rem;
+}
+
+// set a base border
+%border {
+  border: 1px solid $color-light;
+}
+
+// set the base for the button div
+%button {
+  border: none;
+  background: $color-primary;
+  color: $color-white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.8%;
+  &:hover {
+    background: $color-green;
+  }
+}
+
+// set the base for the input
+%input {
+  border: 1px solid $color-light;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+// set the base for the form
+%form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $color-black;
+  background: $color-light;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background: $color-primary;
+  color: $color-white;
+  @extend %full-width;
+  @extend %bottom;
+  padding: 0.5% 0 0 0;
+  border-top: 2px solid $color-secondary;
+}
+
+.footer {
+  @extend %flex-around;
+}
+
+.footer-divider {
+  border-right: 3px solid $color-secondary;
+  @extend %full-height;
+}
+
+footer a {
+  color: $color-white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background: $color-secondary;
+  color: $color-white;
+  @extend %full-width;
+  @extend %top;
+}
+
+.nav-bar {
+  @extend %flex-center;
+  @extend %full-width;
+  @extend %top;
+  color: $color-white;
+}
+
+.nav-bar .resume-button {
+  @extend %full-width;
+  @extend %flex-end;
+}
+
+.resume-button a {
+  @extend %button;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.menu {
+  @extend %flex-start;
+  @extend %full-width;
+}
+
+.menu ul {
+  list-style: none;
+  @extend %flex-around;
+  @extend %full-width;
+}
+
+.menu a:hover {
+  color: $color-green;
+}
+
+.logo img{
+  width: 25px;
+  height: 25px;
+  margin: 0 1em;
+}
+.menu-toggle {
+  display: none;
+}
+
+
+/* Hero */
+.hero {
+  color: $color-black;
+  @extend %full-width;
+  @extend %flex-center;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  bottom: 0;
+  @extend %no-margin;
+  @extend %no-padding;
+  top: 2%;
+}
+
+.hero h2 {
+  @extend %no-margin;
+  @extend %no-padding;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.hero .follow-me-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.hero .social-icons {
+  @extend %flex-center;
+  font-size: 2rem;
+}
+.hero .social-icons a {
+  margin: 0 0.2rem;
+}
+
+/* Line */
+.line {
+  border-top: 1px solid $color-black;
+  @extend %full-width;
+}

@@ -1,0 +1,174 @@
+/* add the color palette */
+/* 1B4A23 */
+/* FFC090 */
+/* FFFFFF */
+/* 19912D */
+/* F7F7F7 */
+/* F9F9F9 */
+/* 000000 */
+.hero .social-icons, .hero, .nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar .resume-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu ul, .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.line, .hero, .menu ul, .menu, .nav-bar .resume-button, .nav-bar, header, footer {
+  width: 100%;
+}
+
+.footer-divider {
+  height: 100%;
+}
+
+.nav-bar, header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+.hero h2, .hero h1 {
+  margin: 0;
+}
+
+.hero h2, .hero h1 {
+  padding: 0;
+}
+
+.resume-button a {
+  border: none;
+  background: #1b4a23;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.8%;
+}
+.resume-button a:hover {
+  background: #19912d;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background: #1b4a23;
+  color: #ffffff;
+  padding: 0.5% 0 0 0;
+  border-top: 2px solid #ffc090;
+}
+
+.footer-divider {
+  border-right: 3px solid #ffc090;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background: #ffc090;
+  color: #ffffff;
+}
+
+.nav-bar {
+  color: #ffffff;
+}
+
+a {
+  color: #1b4a23;
+  text-decoration: none;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu a:hover {
+  color: #19912d;
+}
+
+.logo img {
+  width: 25px;
+  height: 25px;
+  margin: 0 1em;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Hero */
+.hero {
+  color: #000000;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  bottom: 0;
+  top: 2%;
+}
+
+.hero h2 {
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.hero .follow-me-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.hero .social-icons {
+  font-size: 2rem;
+}
+
+.hero .social-icons a {
+  margin: 0 0.2rem;
+}
+
+/* Line */
+.line {
+  border-top: 1px solid #000000;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
