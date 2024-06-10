@@ -94,7 +94,7 @@ $color-black: #000000;
 
 // set the base for the top
 %top {
-  top:0;
+  top: 0;
 }
 
 // set the base for the bottom
@@ -250,7 +250,7 @@ a {
   color: $color-green;
 }
 
-.logo img{
+.logo img {
   width: 25px;
   height: 25px;
   margin: 0 1em;
@@ -258,7 +258,6 @@ a {
 .menu-toggle {
   display: none;
 }
-
 
 /* Hero */
 .hero {
@@ -305,3 +304,62 @@ a {
   border-top: 1px solid $color-black;
   @extend %full-width;
 }
+
+/* Skills */
+.skills {
+  @extend %full-width;
+  @extend %flex-column;
+  margin-top: 2%;
+}
+// make the skill-container be scrollable horizontally
+// show only 5 elements at a time
+.skills {
+  @extend %full-width;
+  @extend %flex-column;
+  margin-top: 2%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: $color-secondary;
+}
+
+.skills h2 {
+  color: $color-primary;
+  @extend %flex-start;
+  align-content: flex-start;
+  font-size: 2rem;
+  padding: 0.2rem;
+  margin: 0;
+}
+
+.skills-container {
+  @extend %flex-around;
+  @extend %no-margin;
+  @extend %no-padding;
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-container .skills-item {
+  min-width: 20%;
+  font-size: 2rem;
+  color: $color-primary;
+  text-align: center;
+  animation: scrollSkills 15s linear infinite;
+}
+
+@keyframes scrollSkills {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/* About */
+#About {
+  @extend %full-width;
+  @extend %flex-row;
+  margin-top: 2%;
+}
+

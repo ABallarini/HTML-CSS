@@ -14,3 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added the `stylesheet.css` file.
 - Added the `stylesheet.scss` file.
 - Added the `portfolio.html` file.
+
+### Changed
+- Changed the style for the skills section
