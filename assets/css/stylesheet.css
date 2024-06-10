@@ -6,7 +6,7 @@
 /* F7F7F7 */
 /* F9F9F9 */
 /* 000000 */
-.work-image, .about-image, .hero .social-icons, .hero, .nav-bar {
+.contact-image, .projects-image, .work-image, .about-image, .hero .social-icons, .hero, .nav-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,21 +24,21 @@
   align-items: center;
 }
 
-.work, .about, .skills-container, .menu ul, .footer {
+#Contact, .projects, .work, .about, .skills-container, .menu ul, .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .hero, .menu ul, .menu, .nav-bar .resume-button, .nav-bar, header, footer {
+.contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .hero, .menu ul, .menu, .nav-bar .resume-button, .nav-bar, header, footer {
   width: 100%;
 }
 
-.work-image img, .about-image img, .about, #About, #Skills, .footer-divider {
+.contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-divider {
   height: 100%;
 }
 
-.skills {
+.contact, .skills {
   display: flex;
   flex-direction: column;
 }
@@ -59,7 +59,7 @@ footer {
   padding: 0;
 }
 
-.resume-button a {
+.contact-form button, .resume-button a {
   border: none;
   background: #1b4a23;
   color: #ffffff;
@@ -72,8 +72,16 @@ footer {
   padding: 0.5rem 0.5rem;
   margin-right: 0.8%;
 }
-.resume-button a:hover {
+.contact-form button:hover, .resume-button a:hover {
   background: #19912d;
+}
+
+.contact-form textarea, .contact-form input {
+  border: 1px solid #f7f7f7;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
 }
 
 section {
@@ -252,6 +260,47 @@ a {
 .work-image {
   width: 30%;
   height: 30%;
+  border-radius: 8%;
+  overflow: hidden;
+}
+
+/* Projects */
+.projects-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30%;
+  height: 30%;
+}
+
+/* Contact */
+#Contact {
+  background-color: #ffc090;
+}
+
+.contact {
+  width: 50%;
+}
+
+.contact-form input {
+  margin-bottom: 1rem;
+}
+
+.contact-form textarea {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form button {
+  width: 50%;
+}
+
+.contact-form button:hover {
+  background: #19912d;
+}
+
+.contact-image {
+  width: 40%;
+  height: 40%;
   border-radius: 8%;
   overflow: hidden;
 }

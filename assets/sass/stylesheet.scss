@@ -440,3 +440,74 @@ section {
   @extend %full-width;
   @extend %full-height;
 }
+
+/* Projects */
+#Projects {
+  @extend %full-width;
+  @extend %full-height;
+}
+
+.projects {
+  @extend %flex-around;
+  @extend %full-width;
+  @extend %full-height;
+}
+
+.projects-image {
+  @extend %flex-center;
+  // make a round image
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30%;
+  height: 30%;
+}
+
+.projects-image img {
+  @extend %full-width;
+  @extend %full-height;
+}
+
+/* Contact */
+#Contact {
+  @extend %flex-around;
+  @extend %full-width;
+  background-color: $color-secondary;
+}
+
+.contact {
+  width: 50%;
+  @extend %flex-column;
+}
+
+.contact-form input {
+  @extend %input;
+  margin-bottom: 1rem;
+}
+
+.contact-form textarea {
+  @extend %input;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form button {
+  @extend %button;
+  width: 50%;
+}
+
+.contact-form button:hover {
+  background: $color-green;
+}
+
+.contact-image {
+  @extend %flex-center;
+  width: 40%;
+  height: 40%;
+  border-radius: 8%;
+  overflow: hidden;
+} 
+
+.contact-image img {
+  @extend %full-width;
+  @extend %full-height;
+}
