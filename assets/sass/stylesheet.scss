@@ -164,6 +164,11 @@ $color-black: #000000;
   font-size: 1rem;
 }
 
+// set the base padding for the sections
+%section-padding {
+  padding: 5% 0 5% 0;
+}
+
 // set the base for the form
 %form {
   width: 100%;
@@ -179,6 +184,11 @@ body {
   background: $color-light;
   margin: 0;
   padding: 0;
+}
+
+h3 {
+  @extend %no-margin;
+  @extend %no-padding;
 }
 
 footer {
@@ -259,29 +269,29 @@ a {
   display: none;
 }
 
+/* Sections */
+section {
+  @extend %section-padding;
+}
+
 /* Hero */
 .hero {
   color: $color-black;
   @extend %full-width;
   @extend %flex-center;
-  margin-top: 2%;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  bottom: 0;
+  font-size: 4rem;
   @extend %no-margin;
   @extend %no-padding;
-  top: 2%;
 }
 
 .hero h2 {
   @extend %no-margin;
   @extend %no-padding;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-style: italic;
   font-weight: normal;
 }
@@ -301,15 +311,21 @@ a {
 
 /* Line */
 .line {
-  border-top: 1px solid $color-black;
+  border-top: 2px solid $color-primary;
   @extend %full-width;
 }
 
 /* Skills */
+#Skills {
+  @extend %full-width;
+  @extend %full-height;
+  @extend %no-margin;
+  @extend %no-padding;
+  background-color: $color-lighter;
+}
 .skills {
   @extend %full-width;
   @extend %flex-column;
-  margin-top: 2%;
 }
 // make the skill-container be scrollable horizontally
 // show only 5 elements at a time
@@ -359,7 +375,68 @@ a {
 /* About */
 #About {
   @extend %full-width;
-  @extend %flex-row;
-  margin-top: 2%;
+  @extend %full-height;
 }
 
+.about {
+  @extend %flex-around;
+  @extend %full-width;
+  @extend %full-height;
+}
+
+.about-image {
+  @extend %flex-center;
+  // make a round image
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30%;
+  height: 30%;
+}
+
+.about-image img {
+  @extend %full-width;
+  @extend %full-height;
+}
+
+.content {
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.2rem;
+}
+.content-title {
+  // make it in an rounded circle all around the text, like a button
+  border-radius: 45%;
+  background-color: $color-secondary;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  color: $color-primary;
+  // the width should be the same of the text
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color-primary;
+  margin: 0;
+}
+
+/* Work */
+#Work {
+  @extend %full-width;
+  background-color: $color-green;
+}
+.work {
+  @extend %flex-around;
+  @extend %full-width;
+}
+
+.work-image {
+  @extend %flex-center;
+  width: 30%;
+  height: 30%;
+  border-radius: 8%;
+  overflow: hidden;
+}
+
+.work-image img {
+  @extend %full-width;
+  @extend %full-height;
+}

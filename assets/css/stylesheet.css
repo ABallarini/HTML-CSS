@@ -6,7 +6,7 @@
 /* F7F7F7 */
 /* F9F9F9 */
 /* 000000 */
-.hero .social-icons, .hero, .nav-bar {
+.work-image, .about-image, .hero .social-icons, .hero, .nav-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,28 +24,23 @@
   align-items: center;
 }
 
-.skills-container, .menu ul, .footer {
+.work, .about, .skills-container, .menu ul, .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#About, .skills, .line, .hero, .menu ul, .menu, .nav-bar .resume-button, .nav-bar, header, footer {
+.work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .hero, .menu ul, .menu, .nav-bar .resume-button, .nav-bar, header, footer {
   width: 100%;
 }
 
-.footer-divider {
+.work-image img, .about-image img, .about, #About, #Skills, .footer-divider {
   height: 100%;
 }
 
 .skills {
   display: flex;
   flex-direction: column;
-}
-
-#About {
-  display: flex;
-  flex-direction: row;
 }
 
 .nav-bar, header {
@@ -56,11 +51,11 @@ footer {
   bottom: 0;
 }
 
-.skills-container, .hero h2, .hero h1 {
+.skills-container, #Skills, .hero h2, .hero h1, h3 {
   margin: 0;
 }
 
-.skills-container, .hero h2, .hero h1 {
+.skills-container, #Skills, .hero h2, .hero h1, h3 {
   padding: 0;
 }
 
@@ -79,6 +74,10 @@ footer {
 }
 .resume-button a:hover {
   background: #19912d;
+}
+
+section {
+  padding: 5% 0 5% 0;
 }
 
 body {
@@ -142,23 +141,19 @@ a {
   display: none;
 }
 
+/* Sections */
 /* Hero */
 .hero {
   color: #000000;
-  margin-top: 2%;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  bottom: 0;
-  top: 2%;
+  font-size: 4rem;
 }
 
 .hero h2 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-style: italic;
   font-weight: normal;
 }
@@ -178,12 +173,12 @@ a {
 
 /* Line */
 .line {
-  border-top: 1px solid #000000;
+  border-top: 2px solid #1b4a23;
 }
 
 /* Skills */
-.skills {
-  margin-top: 2%;
+#Skills {
+  background-color: #f9f9f9;
 }
 
 .skills {
@@ -223,8 +218,42 @@ a {
   }
 }
 /* About */
-#About {
-  margin-top: 2%;
+.about-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30%;
+  height: 30%;
+}
+
+.content {
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.2rem;
+}
+
+.content-title {
+  border-radius: 45%;
+  background-color: #ffc090;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  color: #1b4a23;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b4a23;
+  margin: 0;
+}
+
+/* Work */
+#Work {
+  background-color: #19912d;
+}
+
+.work-image {
+  width: 30%;
+  height: 30%;
+  border-radius: 8%;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
