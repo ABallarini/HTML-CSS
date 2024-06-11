@@ -7,12 +7,12 @@
 /* F7F7F7 */
 /* F9F9F9 */
 /* 000000 */
-$color-primary: #1b4a23;
-$color-secondary: #ffc090;
+$color-primary: #b4dcb0;
+$color-secondary: #8dca89;
 $color-white: #ffffff;
-$color-green: #19912d;
-$color-light: #f7f7f7;
-$color-lighter: #f9f9f9;
+$color-green: #8dca89;
+$color-light: #b4dcb0;
+$color-lighter: #daeed7;
 $color-black: #000000;
 
 // Set a base for the centering using flex
@@ -140,8 +140,8 @@ $color-black: #000000;
 // set the base for the button div
 %button {
   border: none;
-  background: $color-primary;
-  color: $color-white;
+  background: $color-secondary;
+  color: $color-black;
   padding: 1rem 2rem;
   cursor: pointer;
   border-radius: 5px;
@@ -151,7 +151,7 @@ $color-black: #000000;
   padding: 0.5rem 0.5rem;
   margin-right: 0.8%;
   &:hover {
-    background: $color-green;
+    background: $color-lighter;
   }
 }
 
@@ -162,6 +162,7 @@ $color-black: #000000;
   border-radius: 5px;
   width: 100%;
   font-size: 1rem;
+  background-color: $color-lighter;
 }
 
 // set the base padding for the sections
@@ -181,54 +182,72 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: $color-black;
-  background: $color-light;
-  margin: 0;
-  padding: 0;
+  background-color: $color-lighter;
+  @extend %no-margin;
+  @extend %no-padding;
 }
 
 h3 {
   @extend %no-margin;
   @extend %no-padding;
 }
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 footer {
   background: $color-primary;
-  color: $color-white;
+  color: $color-black;
+  display: flex;
+  justify-content: center;
   @extend %full-width;
   @extend %bottom;
-  padding: 0.5% 0 0 0;
   border-top: 2px solid $color-secondary;
+  font-size: 1.5rem;
+  height: 7.5dvh;
 }
 
 .footer {
+  @extend %full-width;
   @extend %flex-around;
 }
 
 .footer-divider {
-  border-right: 3px solid $color-secondary;
+  border-right: 3px solid $color-black;
   @extend %full-height;
 }
 
 footer a {
-  color: $color-white;
-  text-decoration: none;
-  font-size: 1rem;
+  color: $color-black;
+  align-items: center;
+  @extend %full-height;
   padding: 0 1rem;
+}
+
+.footer-nav {
+  @extend %flex-center;
+  @extend %full-height;
 }
 
 /* Header */
 header {
-  background: $color-secondary;
-  color: $color-white;
+  background: $color-primary;
+  position: fixed;
+  color: $color-black;
   @extend %full-width;
+  height: 7.5dvh;
   @extend %top;
+  z-index: 100;
 }
 
 .nav-bar {
   @extend %flex-center;
   @extend %full-width;
   @extend %top;
-  color: $color-white;
+  color: $color-black;
 }
 
 .nav-bar .resume-button {
@@ -241,7 +260,7 @@ header {
 }
 
 a {
-  color: $color-primary;
+  color: $color-black;
   text-decoration: none;
 }
 
@@ -256,8 +275,13 @@ a {
   @extend %full-width;
 }
 
+.menu a {
+  padding: 0.7rem;
+  color: $color-black;
+}
+
 .menu a:hover {
-  color: $color-green;
+  color: $color-lighter;
 }
 
 .logo img {
@@ -286,6 +310,7 @@ section {
   font-size: 4rem;
   @extend %no-margin;
   @extend %no-padding;
+  margin-top: 15%;
 }
 
 .hero h2 {
@@ -311,7 +336,7 @@ section {
 
 /* Line */
 .line {
-  border-top: 2px solid $color-primary;
+  border-top: 2px solid $color-black;
   @extend %full-width;
 }
 
@@ -321,11 +346,6 @@ section {
   @extend %full-height;
   @extend %no-margin;
   @extend %no-padding;
-  background-color: $color-lighter;
-}
-.skills {
-  @extend %full-width;
-  @extend %flex-column;
 }
 // make the skill-container be scrollable horizontally
 // show only 5 elements at a time
@@ -336,14 +356,15 @@ section {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: $color-secondary;
+  overflow: hidden;
 }
 
 .skills h2 {
-  color: $color-primary;
+  color: $color-black;
   @extend %flex-start;
   align-content: flex-start;
   font-size: 2rem;
-  padding: 0.2rem;
+  padding: 0.5rem 0rem 0rem 1rem;
   margin: 0;
 }
 
@@ -351,16 +372,19 @@ section {
   @extend %flex-around;
   @extend %no-margin;
   @extend %no-padding;
-  overflow: hidden;
   position: relative;
+  animation: scrollSkills 15s linear infinite;
+}
+
+.skills-container:hover {
+  animation-play-state: paused;
 }
 
 .skills-container .skills-item {
   min-width: 20%;
   font-size: 2rem;
-  color: $color-primary;
+  color: $color-black;
   text-align: center;
-  animation: scrollSkills 15s linear infinite;
 }
 
 @keyframes scrollSkills {
@@ -368,7 +392,7 @@ section {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-20%);
   }
 }
 
@@ -405,16 +429,18 @@ section {
 }
 .content-title {
   // make it in an rounded circle all around the text, like a button
-  border-radius: 45%;
+  // make the form smooth as a circle
+  border-radius: 50px;
+
   background-color: $color-secondary;
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 0.7rem 1.7rem 0.7rem 1.7rem;
   color: $color-primary;
   // the width should be the same of the text
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
-  color: $color-primary;
+  color: $color-black;
   margin: 0;
 }
 
@@ -426,6 +452,11 @@ section {
 .work {
   @extend %flex-around;
   @extend %full-width;
+}
+
+.work .content .content-title {
+  background-color: $color-light;
+  color: $color-black;
 }
 
 .work-image {
@@ -492,11 +523,12 @@ section {
 
 .contact-form button {
   @extend %button;
+  background-color: $color-light;
   width: 50%;
 }
 
 .contact-form button:hover {
-  background: $color-green;
+  background: $color-lighter;
 }
 
 .contact-image {
@@ -505,9 +537,88 @@ section {
   height: 40%;
   border-radius: 8%;
   overflow: hidden;
-} 
+}
 
 .contact-image img {
   @extend %full-width;
   @extend %full-height;
+}
+
+/* Projects Description */
+#ProjectsDescription {
+  padding: 5% 0 0% 0;
+  @extend %full-width;
+  @extend %flex-start;
+  height: 20dvh;
+}
+
+.projects-description {
+  @extend %full-width;
+  padding: 0 5%;
+  font-size: 1.2rem;
+}
+
+.projects-description h1 {
+  @extend %no-margin;
+}
+
+.projects-description p {
+  @extend %no-margin;
+}
+
+/* Projects List */
+#ProjectsList {
+  padding: 0% 2dvh 0% 2dvh;
+}
+
+.project-cards {
+  @extend %flex-around;
+  @extend %full-width;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 58dvh;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.project-card {
+  // make a card 20% of the width
+  width: 26%;
+  // make a card with a background color
+  background-color: $color-green;
+  // make a border around the card
+  border-radius: 15px;
+  // make a margin around the card
+  padding: 1%;
+  margin: 1%;
+  // make a shadow around the card
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  // make the card to be a flex column
+  @extend %flex-column;
+  // make the card to be a flex center
+  @extend %flex-center;
+  // make the card to be a full width
+  @extend %full-width;
+}
+
+.projects-card img {
+  @extend %full-width;
+  @extend %full-height;
+}
+
+.projects-card h2 {
+  @extend %no-margin;
+  @extend %no-padding;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.projects-card p {
+  @extend %no-margin;
+  @extend %no-padding;
+  padding: 0.5rem;
 }

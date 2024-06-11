@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Fixed the style of the conact section
+- Fixed the portfolio page
+
+### Changed
+- Changed colors of the website
+
 
 ## [0.1.1] - 10/06/2024
 
