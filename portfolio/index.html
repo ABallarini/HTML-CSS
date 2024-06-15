@@ -49,22 +49,24 @@
     <meta name="twitter:image" content="../images/og-image.jpg" />
   </head>
   <body>
-    <div class="page">
-      <header>
-        <div class="nav-bar">
-          <div class="logo">
-            <a href="/"
-              ><img src="../assets/img/code.svg" alt="Coding Logo"
-            /></a>
-          </div>
+    <header>
+      <div class="nav-bar">
+        <!-- <div class="logo">
+          <a href="/"><img src="assets/img/code.svg" alt="Coding Logo" /></a>
+        </div> -->
+        <!-- add a toggle switch for the dark or light mode -->
+
+        <input type="checkbox" class="toggle" id="toggle" />
+
+        <div class="menu-list">
           <div class="menu">
             <nav>
               <ul>
-                <li><a href="../">Home</a></li>
-                <li><a href="../#About">About</a></li>
-                <li><a href="../#Work">Work</a></li>
-                <li><a href="../portfolio">Projects</a></li>
-                <li><a href="../#Contact">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#About">About</a></li>
+                <li><a href="/#Work">Work</a></li>
+                <li><a href="/portfolio">Projects</a></li>
+                <li><a href="/#Contact">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -77,13 +79,17 @@
               >Resume <i class="fa fa-download"></i>
             </a>
           </div>
-          <!-- insert a menu toggle -->
-          <div class="menu-toggle">
-            <!-- it will display the menu as the vertical menu -->
-            <i class="fas fa-bars" onclick="verticalMenu()"></i>
-          </div>
         </div>
-      </header>
+
+        <!-- menu toggle -->
+        <div class="menu-toggle">
+          <!-- it will display the menu as the vertical menu -->
+          <input type="checkbox" id="toggle-icon" class="toggle-icon" />
+          <label for="toggle-icon"><i class="fas fa-bars"></i></label>
+        </div>
+      </div>
+    </header>
+    <div class="page">
       <section id="ProjectsDescription">
         <div class="projects-description">
           <h1>Projects</h1>

@@ -139,6 +139,7 @@ $color-black: #000000;
 
 // set the base for the button div
 %button {
+  text-align: center;
   border: none;
   background: $color-secondary;
   color: $color-black;
@@ -182,11 +183,15 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
-  color: $color-black;
-  background-color: $color-lighter;
+  color: $color-light;
+  background-color: $color-black;
   @extend %no-margin;
   @extend %no-padding;
+}
+
+body:has(.toggle:checked) {
+  background-color: $color-lighter;
+  color: $color-black;
 }
 
 h3 {
@@ -201,7 +206,7 @@ h3 {
 }
 
 footer {
-  background: $color-primary;
+  background: $color-lighter;
   color: $color-black;
   display: flex;
   justify-content: center;
@@ -243,7 +248,7 @@ footer a {
 
 /* Header */
 header {
-  background: $color-primary;
+  background: $color-lighter;
   position: fixed;
   color: $color-black;
   @extend %full-width;
@@ -253,7 +258,7 @@ header {
 }
 
 .nav-bar {
-  @extend %flex-center;
+  @extend %flex-between;
   @extend %full-width;
   @extend %top;
   color: $color-black;
@@ -264,13 +269,74 @@ header {
   @extend %flex-end;
 }
 
+.toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #707070;
+  transition: background-color ease 0.3s;
+}
+
+.toggle:before {
+  content: "☀️ 🌙";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  font: 10px/28px Helvetica;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-indent: -22px;
+  word-spacing: 37px;
+  color: #fff;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.toggle:checked {
+  background-color: #4cd964;
+}
+
+.toggle:checked:before {
+  left: 32px;
+}
+
 .resume-button a {
   @extend %button;
 }
 
 a {
-  color: $color-black;
+  color: $color-light;
   text-decoration: none;
+}
+
+a:hover {
+  color: $color-lighter;
+}
+
+body:has(.toggle:checked) a {
+  color: $color-black;
+}
+
+.menu-list {
+  @extend %flex-center;
+  @extend %full-width;
 }
 
 .menu {
@@ -304,11 +370,13 @@ a {
 
 // responsive design menu for mobile with a hamburger icon
 @media (max-width: 768px) {
-  
-
   .menu-toggle {
     display: block;
     padding: 1rem;
+  }
+
+  .menu-toggle .toggle-icon {
+    display: none ;
   }
 
   .menu-toggle {
@@ -316,34 +384,52 @@ a {
     font-size: 1.5rem;
   }
 
-  .menu-toggle a:hover {
-    color: $color-lighter;
-  }
-
-  .menu-toggle a:active {
+  body:has(.toggle-icon:checked) .menu-toggle {
     color: $color-light;
   }
+  
 
-  .menu-toggle a:focus {
-    color: $color-light;
-  }
-
-  .menu ul {
+  // display flex for the menu list if the toggle is checked
+  body:has(.toggle-icon:checked) .menu-list {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
+    width: 100dvw;
     background: $color-primary;
     position: absolute;
     top: 7.5dvh;
     left: 0;
     right: 0;
     z-index: 100;
+    text-align: center;
+  }
+
+  .menu-list {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    width: 100dvw;
+    background: $color-primary;
+    position: absolute;
+    top: 7.5dvh;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-align: center;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
   }
 
   .menu ul li {
     text-align: center;
+    width: 100%;
   }
 
   .menu ul li a {
-    padding: 1rem;
+    font-size: 1.5rem;
     color: $color-black;
   }
 
@@ -359,8 +445,20 @@ a {
     color: $color-light;
   }
 
-  .menu-toggle.active + .menu {
-    display: block;
+  .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100dvw;
+  }
+
+  .nav-bar .resume-button {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100dvw;
   }
 }
 
@@ -371,7 +469,6 @@ section {
 
 /* Hero */
 .hero {
-  color: $color-black;
   @extend %full-width;
   @extend %flex-center;
   text-align: center;
@@ -428,8 +525,12 @@ section {
 
 /* Line */
 .line {
-  border-top: 2px solid $color-black;
+  border-top: 2px solid $color-light;
   @extend %full-width;
+}
+
+body:has(.toggle:checked) .line {
+  border-top: 2px solid $color-black;
 }
 
 /* Skills */
@@ -440,11 +541,9 @@ section {
   @extend %no-padding;
 }
 // make the skill-container be scrollable horizontally
-// show only 5 elements at a time
 .skills {
   @extend %full-width;
   @extend %flex-column;
-  margin-top: 2%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: $color-secondary;
@@ -473,10 +572,12 @@ section {
 }
 
 .skills-container .skills-item {
-  min-width: 20%;
-  font-size: 2rem;
+  min-width: 15%;
+  font-size: 5rem;
   color: $color-black;
   text-align: center;
+  @extend %no-margin;
+  @extend %no-padding;
 }
 
 @keyframes scrollSkills {
@@ -484,7 +585,32 @@ section {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-3%);
+  }
+}
+
+/* Responsive design for the skills section */
+@media (max-width: 768px) {
+  .skills h2 {
+    font-size: 1.5rem;
+  }
+
+  .skills-container {
+    animation: scrollSkillsMobile 15s linear infinite;
+  }
+
+  .skills-container .skills-item {
+    font-size: 4rem;
+    min-width: 30%;
+  }
+}
+
+@keyframes scrollSkillsMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
@@ -558,6 +684,7 @@ section {
 #Work {
   @extend %full-width;
   background-color: $color-green;
+  color: $color-black;
 }
 .work {
   @extend %flex-around;
@@ -582,7 +709,7 @@ section {
   @extend %full-height;
 }
 
-/* Responsive design for the work section */ 
+/* Responsive design for the work section */
 @media (max-width: 768px) {
   .work {
     flex-direction: column;
@@ -643,6 +770,7 @@ section {
   @extend %flex-around;
   @extend %full-width;
   background-color: $color-secondary;
+  color: $color-black;
 }
 
 .contact {
@@ -699,10 +827,10 @@ section {
 
 /* Projects Description */
 #ProjectsDescription {
-  padding: 5% 0 0% 0;
+  padding: 8vh 0 0% 0;
   @extend %full-width;
   @extend %flex-start;
-  height: 20dvh;
+  @extend %full-height;
 }
 
 .projects-description {
@@ -730,7 +858,7 @@ section {
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
-  height: 58dvh;
+  height: 63vh;
 }
 
 ::-webkit-scrollbar {
@@ -740,9 +868,10 @@ section {
 
 .project-card {
   // make a card 20% of the width
-  width: 26%;
+  width: 80%;
   // make a card with a background color
   background-color: $color-green;
+  color: $color-black;
   // make a border around the card
   border-radius: 15px;
   // make a margin around the card
@@ -774,4 +903,8 @@ section {
   @extend %no-margin;
   @extend %no-padding;
   padding: 0.5rem;
+}
+
+p a {
+  color: $color-light;
 }

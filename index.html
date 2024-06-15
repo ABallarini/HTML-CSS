@@ -6,9 +6,12 @@
     <!--- Favicon -->
     <link rel="icon" href="assets/img/MyAvatar.png" type="image/png" />
     <!--- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <!-- - Font Awesome -->
     <link
       rel="stylesheet"
@@ -44,36 +47,44 @@
     <meta name="twitter:image" content="images/og-image.jpg" />
   </head>
 
-  <body>
+  <body class="body">
     <header>
       <div class="nav-bar">
-        <div class="logo">
+        <!-- <div class="logo">
           <a href="/"><img src="assets/img/code.svg" alt="Coding Logo" /></a>
+        </div> -->
+        <!-- add a toggle switch for the dark or light mode -->
+
+        <input type="checkbox" class="toggle" id="toggle" />
+
+        <div class="menu-list">
+          <div class="menu">
+            <nav>
+              <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Work">Work</a></li>
+                <li><a href="./portfolio">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="resume-button">
+            <!--- button download resume -->
+            <a
+              href="AndreaBallariniResume.pdf"
+              download="AndreaBallariniResume.pdf"
+              class="cta"
+              >Resume <i class="fa fa-download"></i>
+            </a>
+          </div>
         </div>
-        <div class="menu">
-          <nav>
-            <ul>
-              <li><a href="./">Home</a></li>
-              <li><a href="#About">About</a></li>
-              <li><a href="#Work">Work</a></li>
-              <li><a href="./portfolio">Projects</a></li>
-              <li><a href="#Contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="resume-button">
-          <!--- button download resume -->
-          <a
-            href="AndreaBallariniResume.pdf"
-            download="AndreaBallariniResume.pdf"
-            class="cta"
-            >Resume <i class="fa fa-download"></i>
-          </a>
-        </div>
-        <!-- insert a menu toggle -->
+
+        <!-- menu toggle -->
         <div class="menu-toggle">
           <!-- it will display the menu as the vertical menu -->
-          <i class="fas fa-bars" onclick="verticalMenu()"></i>
+          <input type="checkbox" id="toggle-icon" class="toggle-icon" />
+          <label for="toggle-icon"><i class="fas fa-bars"></i></label>
         </div>
       </div>
     </header>
