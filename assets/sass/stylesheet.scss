@@ -178,8 +178,10 @@ $color-black: #000000;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.5;
   color: $color-black;
   background-color: $color-lighter;
@@ -230,6 +232,13 @@ footer a {
 .footer-nav {
   @extend %flex-center;
   @extend %full-height;
+}
+
+/* Responsive design for the footer */
+@media (max-width: 768px) {
+  footer {
+    font-size: 1rem;
+  }
 }
 
 /* Header */
@@ -293,6 +302,68 @@ a {
   display: none;
 }
 
+// responsive design menu for mobile with a hamburger icon
+@media (max-width: 768px) {
+  
+
+  .menu-toggle {
+    display: block;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    color: $color-black;
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle a:hover {
+    color: $color-lighter;
+  }
+
+  .menu-toggle a:active {
+    color: $color-light;
+  }
+
+  .menu-toggle a:focus {
+    color: $color-light;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    background: $color-primary;
+    position: absolute;
+    top: 7.5dvh;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .menu ul li {
+    text-align: center;
+  }
+
+  .menu ul li a {
+    padding: 1rem;
+    color: $color-black;
+  }
+
+  .menu ul li a:hover {
+    color: $color-lighter;
+  }
+
+  .menu ul li a:active {
+    color: $color-light;
+  }
+
+  .menu ul li a:focus {
+    color: $color-light;
+  }
+
+  .menu-toggle.active + .menu {
+    display: block;
+  }
+}
+
 /* Sections */
 section {
   @extend %section-padding;
@@ -332,6 +403,27 @@ section {
 }
 .hero .social-icons a {
   margin: 0 0.2rem;
+}
+
+/* Responsive design for the hero section */
+@media (max-width: 768px) {
+  .hero h1 {
+    padding-top: 10%;
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero .follow-me-text {
+    font-size: 1rem;
+  }
+
+  .hero .social-icons {
+    font-size: 1.5rem;
+    padding-bottom: 10%;
+  }
 }
 
 /* Line */
@@ -444,6 +536,24 @@ section {
   margin: 0;
 }
 
+/* Responsive design for the about section */
+@media (max-width: 768px) {
+  section {
+    text-align: center;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .about-image {
+    width: 60%;
+    height: 40%;
+  }
+
+  .content {
+    width: 80%;
+  }
+}
+
 /* Work */
 #Work {
   @extend %full-width;
@@ -472,6 +582,21 @@ section {
   @extend %full-height;
 }
 
+/* Responsive design for the work section */ 
+@media (max-width: 768px) {
+  .work {
+    flex-direction: column;
+  }
+  .work-image {
+    width: 60%;
+    height: 40%;
+  }
+
+  .content {
+    width: 80%;
+  }
+}
+
 /* Projects */
 #Projects {
   @extend %full-width;
@@ -496,6 +621,21 @@ section {
 .projects-image img {
   @extend %full-width;
   @extend %full-height;
+}
+
+/* Responsive design for the projects section */
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column-reverse;
+  }
+  .projects-image {
+    width: 60%;
+    height: 40%;
+  }
+
+  .content {
+    width: 80%;
+  }
 }
 
 /* Contact */
@@ -542,6 +682,19 @@ section {
 .contact-image img {
   @extend %full-width;
   @extend %full-height;
+}
+
+/* Responsive design for the contact section */
+@media (max-width: 768px) {
+  #Contact {
+    justify-content: center;
+  }
+  .contact {
+    width: 70%;
+  }
+  .contact-image {
+    display: none;
+  }
 }
 
 /* Projects Description */
