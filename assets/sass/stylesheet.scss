@@ -183,7 +183,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  color: $color-white;
+  color: $color-lighter;
   background-color: $color-black;
   @extend %no-margin;
   @extend %no-padding;
@@ -206,8 +206,8 @@ h3 {
 }
 
 footer {
-  background: $color-lighter;
-  color: $color-black;
+  background: $color-black;
+  color: $color-lighter;
   display: flex;
   justify-content: center;
   @extend %full-width;
@@ -217,18 +217,26 @@ footer {
   height: 7.5dvh;
 }
 
+body:has(.toggle:checked) footer {
+  background: $color-lighter;
+  color: $color-black;
+}
+
 .footer {
   @extend %full-width;
   @extend %flex-around;
 }
 
 .footer-divider {
+  border-right: 3px solid $color-lighter;
+  height: 50%;
+}
+
+body:has(.toggle:checked) .footer-divider {
   border-right: 3px solid $color-black;
-  @extend %full-height;
 }
 
 footer a {
-  color: $color-black;
   align-items: center;
   @extend %full-height;
   padding: 0 1rem;
@@ -248,20 +256,24 @@ footer a {
 
 /* Header */
 header {
-  background: $color-lighter;
+  background: $color-black;
   position: fixed;
-  color: $color-black;
+  color: $color-lighter;
   @extend %full-width;
   height: 7.5dvh;
   @extend %top;
   z-index: 100;
 }
 
+body:has(.toggle:checked) header {
+  background: $color-lighter;
+  color: $color-black;
+}
+
 .nav-bar {
   @extend %flex-between;
   @extend %full-width;
   @extend %top;
-  color: $color-black;
 }
 
 .nav-bar .resume-button {
@@ -322,7 +334,7 @@ header {
 }
 
 a {
-  color: $color-white;
+  color: $color-lighter;
   text-decoration: none;
 }
 
@@ -352,7 +364,6 @@ body:has(.toggle:checked) a {
 
 .menu a {
   padding: 0.7rem;
-  color: $color-black;
 }
 
 .menu a:hover {
@@ -376,7 +387,7 @@ body:has(.toggle:checked) a {
   }
 
   .menu-toggle .toggle-icon {
-    display: none ;
+    display: none;
   }
 
   .menu-toggle {
@@ -385,9 +396,8 @@ body:has(.toggle:checked) a {
   }
 
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: $color-white;
+    color: $color-lighter;
   }
-  
 
   // display flex for the menu list if the toggle is checked
   body:has(.toggle-icon:checked) .menu-list {
@@ -438,11 +448,11 @@ body:has(.toggle:checked) a {
   }
 
   .menu ul li a:active {
-    color: $color-white;
+    color: $color-lighter;
   }
 
   .menu ul li a:focus {
-    color: $color-white;
+    color: $color-lighter;
   }
 
   .menu ul {
@@ -811,7 +821,6 @@ body:has(.toggle:checked) .line {
 
 /* Responsive design for the contact section */
 @media (max-width: 768px) {
-  
   .contact {
     width: 70%;
   }
@@ -901,7 +910,7 @@ body:has(.toggle:checked) .line {
 }
 
 p a {
-  color: $color-white;
+  color: $color-lighter;
 }
 
 /* Responsive design for the projects list section */

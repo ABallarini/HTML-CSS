@@ -41,7 +41,7 @@
   width: 100%;
 }
 
-.projects-card img, #ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-nav, footer a, .footer-divider {
+.projects-card img, #ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-nav, footer a {
   height: 100%;
 }
 
@@ -102,7 +102,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  color: #ffffff;
+  color: #daeed7;
   background-color: #000000;
 }
 
@@ -119,8 +119,8 @@ body:has(.toggle:checked) {
 }
 
 footer {
-  background: #daeed7;
-  color: #000000;
+  background: #000000;
+  color: #daeed7;
   display: flex;
   justify-content: center;
   border-top: 2px solid #8dca89;
@@ -128,12 +128,21 @@ footer {
   height: 7.5dvh;
 }
 
+body:has(.toggle:checked) footer {
+  background: #daeed7;
+  color: #000000;
+}
+
 .footer-divider {
+  border-right: 3px solid #daeed7;
+  height: 50%;
+}
+
+body:has(.toggle:checked) .footer-divider {
   border-right: 3px solid #000000;
 }
 
 footer a {
-  color: #000000;
   align-items: center;
   padding: 0 1rem;
 }
@@ -146,14 +155,15 @@ footer a {
 }
 /* Header */
 header {
-  background: #daeed7;
+  background: #000000;
   position: fixed;
-  color: #000000;
+  color: #daeed7;
   height: 7.5dvh;
   z-index: 100;
 }
 
-.nav-bar {
+body:has(.toggle:checked) header {
+  background: #daeed7;
   color: #000000;
 }
 
@@ -206,7 +216,7 @@ header {
 }
 
 a {
-  color: #ffffff;
+  color: #daeed7;
   text-decoration: none;
 }
 
@@ -224,7 +234,6 @@ body:has(.toggle:checked) a {
 
 .menu a {
   padding: 0.7rem;
-  color: #000000;
 }
 
 .menu a:hover {
@@ -254,7 +263,7 @@ body:has(.toggle:checked) a {
     font-size: 1.5rem;
   }
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: #ffffff;
+    color: #daeed7;
   }
   body:has(.toggle-icon:checked) .menu-list {
     display: flex;
@@ -298,10 +307,10 @@ body:has(.toggle:checked) a {
     color: #daeed7;
   }
   .menu ul li a:active {
-    color: #ffffff;
+    color: #daeed7;
   }
   .menu ul li a:focus {
-    color: #ffffff;
+    color: #daeed7;
   }
   .menu ul {
     display: flex;
@@ -621,7 +630,7 @@ body:has(.toggle:checked) .line {
 }
 
 p a {
-  color: #ffffff;
+  color: #daeed7;
 }
 
 /* Responsive design for the projects list section */
