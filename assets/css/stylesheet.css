@@ -7,7 +7,7 @@
 /* F7F7F7 */
 /* F9F9F9 */
 /* 000000 */
-.project-card, .contact-image, .projects-image, .work-image, .about-image, .hero .social-icons, .hero, .menu-list, .footer-nav {
+.project-card, .contact-image, .projects-image, .work-image, .about-image, .menu-list, .footer-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@
   align-items: center;
 }
 
-.projects-card img, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .hero, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, header, .footer, footer {
+.projects-card img, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, header, .footer, footer {
   width: 100%;
 }
 
@@ -102,7 +102,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  color: #b4dcb0;
+  color: #ffffff;
   background-color: #000000;
 }
 
@@ -206,7 +206,7 @@ header {
 }
 
 a {
-  color: #b4dcb0;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -254,7 +254,7 @@ body:has(.toggle:checked) a {
     font-size: 1.5rem;
   }
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: #b4dcb0;
+    color: #ffffff;
   }
   body:has(.toggle-icon:checked) .menu-list {
     display: flex;
@@ -298,10 +298,10 @@ body:has(.toggle:checked) a {
     color: #daeed7;
   }
   .menu ul li a:active {
-    color: #b4dcb0;
+    color: #ffffff;
   }
   .menu ul li a:focus {
-    color: #b4dcb0;
+    color: #ffffff;
   }
   .menu ul {
     display: flex;
@@ -321,12 +321,11 @@ body:has(.toggle:checked) a {
 /* Sections */
 /* Hero */
 .hero {
-  text-align: center;
+  padding: 5% 5% 0 5%;
 }
 
 .hero h1 {
   font-size: 4rem;
-  margin-top: 15%;
 }
 
 .hero h2 {
@@ -350,8 +349,10 @@ body:has(.toggle:checked) a {
 
 /* Responsive design for the hero section */
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero {
     padding-top: 10%;
+  }
+  .hero h1 {
     font-size: 3rem;
   }
   .hero h2 {
@@ -464,9 +465,6 @@ body:has(.toggle:checked) .line {
 
 /* Responsive design for the about section */
 @media (max-width: 768px) {
-  section {
-    text-align: center;
-  }
   .about {
     flex-direction: column-reverse;
   }
@@ -474,7 +472,8 @@ body:has(.toggle:checked) .line {
     width: 60%;
     height: 40%;
   }
-  .content {
+  .about .content {
+    text-align: end;
     width: 80%;
   }
 }
@@ -505,7 +504,7 @@ body:has(.toggle:checked) .line {
     width: 60%;
     height: 40%;
   }
-  .content {
+  .work .content {
     width: 80%;
   }
 }
@@ -526,7 +525,8 @@ body:has(.toggle:checked) .line {
     width: 60%;
     height: 40%;
   }
-  .content {
+  .projects .content {
+    text-align: end;
     width: 80%;
   }
 }
@@ -567,9 +567,6 @@ body:has(.toggle:checked) .line {
 
 /* Responsive design for the contact section */
 @media (max-width: 768px) {
-  #Contact {
-    justify-content: center;
-  }
   .contact {
     width: 70%;
   }
@@ -605,7 +602,7 @@ body:has(.toggle:checked) .line {
 }
 
 .project-card {
-  width: 80%;
+  width: 28%;
   background-color: #8dca89;
   color: #000000;
   border-radius: 15px;
@@ -624,7 +621,14 @@ body:has(.toggle:checked) .line {
 }
 
 p a {
-  color: #b4dcb0;
+  color: #ffffff;
+}
+
+/* Responsive design for the projects list section */
+@media (max-width: 768px) {
+  .project-card {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

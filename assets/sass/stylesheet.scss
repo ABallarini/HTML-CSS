@@ -183,7 +183,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  color: $color-light;
+  color: $color-white;
   background-color: $color-black;
   @extend %no-margin;
   @extend %no-padding;
@@ -322,7 +322,7 @@ header {
 }
 
 a {
-  color: $color-light;
+  color: $color-white;
   text-decoration: none;
 }
 
@@ -385,7 +385,7 @@ body:has(.toggle:checked) a {
   }
 
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: $color-light;
+    color: $color-white;
   }
   
 
@@ -438,11 +438,11 @@ body:has(.toggle:checked) a {
   }
 
   .menu ul li a:active {
-    color: $color-light;
+    color: $color-white;
   }
 
   .menu ul li a:focus {
-    color: $color-light;
+    color: $color-white;
   }
 
   .menu ul {
@@ -469,16 +469,13 @@ section {
 
 /* Hero */
 .hero {
-  @extend %full-width;
-  @extend %flex-center;
-  text-align: center;
+  padding: 5% 5% 0 5%;
 }
 
 .hero h1 {
   font-size: 4rem;
   @extend %no-margin;
   @extend %no-padding;
-  margin-top: 15%;
 }
 
 .hero h2 {
@@ -495,7 +492,6 @@ section {
 }
 
 .hero .social-icons {
-  @extend %flex-center;
   font-size: 2rem;
 }
 .hero .social-icons a {
@@ -504,8 +500,10 @@ section {
 
 /* Responsive design for the hero section */
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero {
     padding-top: 10%;
+  }
+  .hero h1 {
     font-size: 3rem;
   }
 
@@ -664,9 +662,6 @@ body:has(.toggle:checked) .line {
 
 /* Responsive design for the about section */
 @media (max-width: 768px) {
-  section {
-    text-align: center;
-  }
   .about {
     flex-direction: column-reverse;
   }
@@ -675,7 +670,8 @@ body:has(.toggle:checked) .line {
     height: 40%;
   }
 
-  .content {
+  .about .content {
+    text-align: end;
     width: 80%;
   }
 }
@@ -719,7 +715,7 @@ body:has(.toggle:checked) .line {
     height: 40%;
   }
 
-  .content {
+  .work .content {
     width: 80%;
   }
 }
@@ -760,7 +756,8 @@ body:has(.toggle:checked) .line {
     height: 40%;
   }
 
-  .content {
+  .projects .content {
+    text-align: end;
     width: 80%;
   }
 }
@@ -814,9 +811,7 @@ body:has(.toggle:checked) .line {
 
 /* Responsive design for the contact section */
 @media (max-width: 768px) {
-  #Contact {
-    justify-content: center;
-  }
+  
   .contact {
     width: 70%;
   }
@@ -868,7 +863,7 @@ body:has(.toggle:checked) .line {
 
 .project-card {
   // make a card 20% of the width
-  width: 80%;
+  width: 28%;
   // make a card with a background color
   background-color: $color-green;
   color: $color-black;
@@ -906,5 +901,12 @@ body:has(.toggle:checked) .line {
 }
 
 p a {
-  color: $color-light;
+  color: $color-white;
+}
+
+/* Responsive design for the projects list section */
+@media (max-width: 768px) {
+  .project-card {
+    width: 80%;
+  }
 }
