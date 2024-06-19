@@ -322,7 +322,7 @@ body:has(.toggle:checked) header {
 }
 
 .toggle:checked {
-  background-color: #4cd964;
+  background-color: $color-green;
 }
 
 .toggle:checked:before {
@@ -391,12 +391,16 @@ body:has(.toggle:checked) a {
   }
 
   .menu-toggle {
-    color: $color-black;
+    color: $color-lighter;
     font-size: 1.5rem;
   }
 
+  body:has(.toggle:checked) .menu-toggle {
+    color: $color-black;
+  }
+
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: $color-lighter;
+    color: $color-green;
   }
 
   // display flex for the menu list if the toggle is checked
@@ -404,28 +408,20 @@ body:has(.toggle:checked) a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100dvw;
-    background: $color-primary;
+    background-color: $color-black;
     position: absolute;
-    top: 7.5dvh;
-    left: 0;
-    right: 0;
+    top: 7.5vh;
     z-index: 100;
-    text-align: center;
+    // add the box-shadow only at the bottom of the div
+    box-shadow: 0 2px $color-green;
+  }
+
+  body:has(.toggle:checked) .menu-list {
+    background-color: $color-lighter;
   }
 
   .menu-list {
     display: none;
-    justify-content: center;
-    flex-direction: column;
-    width: 100dvw;
-    background: $color-primary;
-    position: absolute;
-    top: 7.5dvh;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    text-align: center;
   }
 
   .menu {
@@ -434,13 +430,15 @@ body:has(.toggle:checked) a {
   }
 
   .menu ul li {
+    align-self: baseline;
     text-align: center;
+    justify-content: center;
     width: 100%;
   }
 
   .menu ul li a {
+    text-align: center;
     font-size: 1.5rem;
-    color: $color-black;
   }
 
   .menu ul li a:hover {
@@ -457,11 +455,9 @@ body:has(.toggle:checked) a {
 
   .menu ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-inline-start: 0%;
     flex-direction: column;
-    text-align: center;
-    width: 100dvw;
+    width: 100%;
   }
 
   .nav-bar .resume-button {
@@ -891,22 +887,45 @@ body:has(.toggle:checked) .line {
   @extend %full-width;
 }
 
-.projects-card img {
+.project-image {
   @extend %full-width;
-  @extend %full-height;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
 }
 
-.projects-card h2 {
+.project-image img {
+  @extend %full-width;
+  border-radius: 8%;
+}
+
+.project-card h2 {
   @extend %no-margin;
   @extend %no-padding;
   font-size: 1.5rem;
   padding: 0.5rem;
 }
 
-.projects-card p {
+.project-card p {
   @extend %no-margin;
   @extend %no-padding;
   padding: 0.5rem;
+}
+
+.project-links {
+  @extend %flex-around;
+  @extend %full-width;
+}
+
+.project-links a {
+  color: $color-black;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border-radius: 20%;
+  background-color: $color-light;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $color-lighter;
+  }
 }
 
 p a {

@@ -31,17 +31,17 @@
   align-items: center;
 }
 
-.project-cards, #Contact, .projects, .work, .about, .skills-container, .menu ul, .footer {
+.project-links, .project-cards, #Contact, .projects, .work, .about, .skills-container, .menu ul, .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.projects-card img, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, header, .footer, footer {
+.project-links, .project-image img, .project-image, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, header, .footer, footer {
   width: 100%;
 }
 
-.projects-card img, #ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-nav, footer a {
+#ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-nav, footer a {
   height: 100%;
 }
 
@@ -58,11 +58,11 @@ footer {
   bottom: 0;
 }
 
-.projects-card p, .projects-card h2, .projects-description p, .projects-description h1, .skills-container .skills-item, .skills-container, #Skills, .hero h2, .hero h1, h3, body {
+.project-card p, .project-card h2, .projects-description p, .projects-description h1, .skills-container .skills-item, .skills-container, #Skills, .hero h2, .hero h1, h3, body {
   margin: 0;
 }
 
-.projects-card p, .projects-card h2, .skills-container .skills-item, .skills-container, #Skills, .hero h2, .hero h1, h3, body {
+.project-card p, .project-card h2, .skills-container .skills-item, .skills-container, #Skills, .hero h2, .hero h1, h3, body {
   padding: 0;
 }
 
@@ -208,7 +208,7 @@ body:has(.toggle:checked) header {
 }
 
 .toggle:checked {
-  background-color: #4cd964;
+  background-color: #8dca89;
 }
 
 .toggle:checked:before {
@@ -259,49 +259,44 @@ body:has(.toggle:checked) a {
     display: none;
   }
   .menu-toggle {
-    color: #000000;
+    color: #daeed7;
     font-size: 1.5rem;
   }
+  body:has(.toggle:checked) .menu-toggle {
+    color: #000000;
+  }
   body:has(.toggle-icon:checked) .menu-toggle {
-    color: #daeed7;
+    color: #8dca89;
   }
   body:has(.toggle-icon:checked) .menu-list {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100dvw;
-    background: #b4dcb0;
+    background-color: #000000;
     position: absolute;
-    top: 7.5dvh;
-    left: 0;
-    right: 0;
+    top: 7.5vh;
     z-index: 100;
-    text-align: center;
+    box-shadow: 0 2px #8dca89;
+  }
+  body:has(.toggle:checked) .menu-list {
+    background-color: #daeed7;
   }
   .menu-list {
     display: none;
-    justify-content: center;
-    flex-direction: column;
-    width: 100dvw;
-    background: #b4dcb0;
-    position: absolute;
-    top: 7.5dvh;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    text-align: center;
   }
   .menu {
     display: flex;
     justify-content: center;
   }
   .menu ul li {
+    align-self: baseline;
     text-align: center;
+    justify-content: center;
     width: 100%;
   }
   .menu ul li a {
+    text-align: center;
     font-size: 1.5rem;
-    color: #000000;
   }
   .menu ul li a:hover {
     color: #daeed7;
@@ -314,11 +309,9 @@ body:has(.toggle:checked) a {
   }
   .menu ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-inline-start: 0%;
     flex-direction: column;
-    text-align: center;
-    width: 100dvw;
+    width: 100%;
   }
   .nav-bar .resume-button {
     display: flex;
@@ -620,13 +613,33 @@ body:has(.toggle:checked) .line {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.projects-card h2 {
+.project-image {
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.project-image img {
+  border-radius: 8%;
+}
+
+.project-card h2 {
   font-size: 1.5rem;
   padding: 0.5rem;
 }
 
-.projects-card p {
+.project-card p {
   padding: 0.5rem;
+}
+
+.project-links a {
+  color: #000000;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border-radius: 20%;
+  background-color: #b4dcb0;
+  transition: all 0.3s ease;
+}
+.project-links a:hover {
+  background: #daeed7;
 }
 
 p a {
