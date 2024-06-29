@@ -1,10 +1,6 @@
-// send email via EmailJS service without exposing data using the env file
 
 // Load the environment variables
 require("dotenv").config();
-
-// Load the EmailJS library
-const emailjs = require("emailjs-com");
 
 // onlaod function
 window.onload = function () {
