@@ -1,14 +1,9 @@
 
-// Load the environment variables
-require("dotenv").config();
-
-// onlaod function
 window.onload = function () {
   // Load the emailjs library
   emailjs.init(process.env.USER_ID);
 };
 
-// Add the event listener to the form
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
