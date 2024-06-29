@@ -1,5 +1,6 @@
 
 window.onload = function () {
+  alert("Loaded!");
   // Load the emailjs library
   emailjs.init(process.env.USER_ID);
 };
@@ -12,7 +13,6 @@ document
     console.log(`process.env.SERVICE_ID: ${process.env.SERVICE_ID}`);
     console.log(`process.env.TEMPLATE_ID: ${process.env.TEMPLATE_ID}`);
     event.preventDefault();
-    emailjs.init(process.env.USER_ID);
     emailjs
       .sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, this)
       .then(
