@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 
 window.onload = function () {
   alert("Loaded!");
