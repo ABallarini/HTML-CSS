@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-#ProjectsDescription, .skills h2, .menu {
+#ProjectsDescription, .menu {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -37,15 +37,15 @@
   align-items: center;
 }
 
-.project-links, .project-image img, .project-image, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, header, .footer, footer {
+.project-links, .project-image img, .project-image, .project-card, .project-cards, .projects-description, #ProjectsDescription, .contact-image img, #Contact, .projects-image img, .projects, #Projects, .work-image img, .work, #Work, .about-image img, .about, #About, .skills, #Skills, .line, .menu ul, .menu, .menu-list, .nav-bar .resume-button, .nav-bar, .footer, footer {
   width: 100%;
 }
 
-#ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, #Skills, .footer-nav, footer a {
+#ProjectsDescription, .contact-image img, .projects-image img, .projects, #Projects, .work-image img, .about-image img, .about, #About, .skills, #Skills, .footer-nav, footer a {
   height: 100%;
 }
 
-.project-card, .contact, .skills {
+.project-card, .contact {
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +62,7 @@ footer {
   margin: 0;
 }
 
-.project-card p, .project-card h2, .skills-container .skills-item, .skills-container, #Skills, .hero h2, .hero h1, h3, body {
+.project-card p, .project-card h2, .skills-container .skills-item, #Skills, .hero h2, .hero h1, h3, body {
   padding: 0;
 }
 
@@ -158,7 +158,8 @@ header {
   background: #000000;
   position: fixed;
   color: #daeed7;
-  height: 7.5dvh;
+  width: 100vw;
+  height: 7.5vh;
   z-index: 100;
 }
 
@@ -276,7 +277,9 @@ body:has(.toggle:checked) a {
     position: absolute;
     top: 7.5vh;
     z-index: 100;
-    box-shadow: 0 2px #8dca89;
+    box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
+    -webkit-box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
+    -moz-box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
   }
   body:has(.toggle:checked) .menu-list {
     background-color: #daeed7;
@@ -379,23 +382,30 @@ body:has(.toggle:checked) .line {
 
 /* Skills */
 .skills {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #8dca89;
   overflow: hidden;
+  border-top-right-radius: 20px;
+  background-color: #8dca89;
 }
 
-.skills h2 {
+.skills-title h2 {
+  border-top-right-radius: 20px;
+  background-color: #8dca89;
+  width: fit-content;
   color: #000000;
-  align-content: flex-start;
   font-size: 2rem;
-  padding: 0.5rem 0rem 0rem 1rem;
+  padding: 0.3rem 1rem 0rem 0.5rem;
   margin: 0;
 }
 
+body:has(.toggle:checked) .skills-title h2 {
+  color: #000000;
+}
+
 .skills-container {
+  align-items: center;
+  padding: 1rem 0rem 0rem 0rem;
   position: relative;
-  animation: scrollSkills 15s linear infinite;
+  animation: scrollSkills 30s linear infinite;
 }
 
 .skills-container:hover {
@@ -414,7 +424,7 @@ body:has(.toggle:checked) .line {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-3%);
+    transform: translateX(-162%);
   }
 }
 /* Responsive design for the skills section */
@@ -423,7 +433,7 @@ body:has(.toggle:checked) .line {
     font-size: 1.5rem;
   }
   .skills-container {
-    animation: scrollSkillsMobile 15s linear infinite;
+    animation: scrollSkillsMobile 20s linear infinite;
   }
   .skills-container .skills-item {
     font-size: 4rem;
@@ -435,7 +445,7 @@ body:has(.toggle:checked) .line {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-400%);
   }
 }
 /* About */

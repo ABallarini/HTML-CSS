@@ -259,8 +259,8 @@ header {
   background: $color-black;
   position: fixed;
   color: $color-lighter;
-  @extend %full-width;
-  height: 7.5dvh;
+  width: 100vw;
+  height: 7.5vh;
   @extend %top;
   z-index: 100;
 }
@@ -412,8 +412,9 @@ body:has(.toggle:checked) a {
     position: absolute;
     top: 7.5vh;
     z-index: 100;
-    // add the box-shadow only at the bottom of the div
-    box-shadow: 0 2px $color-green;
+    box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
+    -webkit-box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
+    -moz-box-shadow: 0px 13px 0px 0px rgba(141, 202, 137, 0.4);
   }
 
   body:has(.toggle:checked) .menu-list {
@@ -547,28 +548,34 @@ body:has(.toggle:checked) .line {
 // make the skill-container be scrollable horizontally
 .skills {
   @extend %full-width;
-  @extend %flex-column;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: $color-secondary;
+  @extend %full-height;
   overflow: hidden;
+  border-top-right-radius: 20px;
+  background-color: $color-secondary;
 }
 
-.skills h2 {
+.skills-title h2 {
+  // add a rounded border around the title with the background color such as the skills-container but with the width of the text
+  border-top-right-radius: 20px;
+  background-color: $color-secondary;
+  width: fit-content;
   color: $color-black;
-  @extend %flex-start;
-  align-content: flex-start;
   font-size: 2rem;
-  padding: 0.5rem 0rem 0rem 1rem;
+  padding: 0.3rem 1rem 0rem 0.5rem;
   margin: 0;
+}
+
+body:has(.toggle:checked) .skills-title h2 {
+  color: $color-black;
 }
 
 .skills-container {
   @extend %flex-around;
+  align-items: center;
   @extend %no-margin;
-  @extend %no-padding;
+  padding: 1rem 0rem 0rem 0rem;
   position: relative;
-  animation: scrollSkills 15s linear infinite;
+  animation: scrollSkills 30s linear infinite;
 }
 
 .skills-container:hover {
@@ -589,7 +596,7 @@ body:has(.toggle:checked) .line {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-3%);
+    transform: translateX(-162%);
   }
 }
 
@@ -600,7 +607,7 @@ body:has(.toggle:checked) .line {
   }
 
   .skills-container {
-    animation: scrollSkillsMobile 15s linear infinite;
+    animation: scrollSkillsMobile 20s linear infinite;
   }
 
   .skills-container .skills-item {
@@ -614,7 +621,7 @@ body:has(.toggle:checked) .line {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-400%);
   }
 }
 
